@@ -11,7 +11,7 @@ import { HiDotsVertical } from 'react-icons/hi'
 import NFTCard from '../../components/NFTCard'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
-import banner_img from '../../assets/banner.jfif'
+import banner_img from '../../assets/banner.jpg'
 
 const style = {
   bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
@@ -116,14 +116,14 @@ const Collection = () => {
     <div className="overflow-hidden">
       <Header />
       <div className={style.bannerImageContainer}>
-        <Image
+        <img
           className={style.bannerImage}
           src={
             collection?.bannerImageUrl
               ? collection.bannerImageUrl
               : 'https://via.placeholder.com/200'
           }
-          alt={banner_img}
+          alt="banner image"
         />
       </div>
       <div className={style.infoContainer}>
@@ -136,6 +136,7 @@ const Collection = () => {
                 : 'https://via.placeholder.com/200'
             }
             alt="profile image"
+            
           />
         </div>
         <div className={style.endRow}>
