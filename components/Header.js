@@ -43,7 +43,9 @@ const Header = () => {
         <Link href="/stats/[stats].js">
           <div className={style.headerItem}> Stats </div>
         </Link>
-        <div className={style.headerItem}> Resources </div>
+        <Link href="/uniswap/[uniswap].js">
+          <div className={style.headerItem}> Uniswap </div>
+        </Link>
         <div className={style.headerItem}> Create </div>
         <div className={style.headerIcon}>
           <CgProfile />

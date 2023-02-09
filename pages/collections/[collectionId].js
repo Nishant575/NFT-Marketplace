@@ -13,6 +13,7 @@ import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
 
+
 const style = {
   bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
   bannerImage: `w-full object-cover`,
@@ -116,14 +117,11 @@ const Collection = () => {
     <div className="overflow-hidden">
       <Header />
       <div className={style.bannerImageContainer}>
-        <img
-          className={style.bannerImage}
-          src={
-            collection?.bannerImageUrl
-              ? collection.bannerImageUrl
-              : 'https://via.placeholder.com/200'
-          }
-          alt="banner image"
+        <Image
+      src={banner_img}
+      alt="Picture of the author"
+      width="800px"
+      height="200px"
         />
       </div>
       <div className={style.infoContainer}>
