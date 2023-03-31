@@ -20,7 +20,7 @@ const style = {
   headerIcon: `text-[#8a939b] text-3xl font-black px-4 hover:text-white cursor-pointer`,
 }
 
-const Header = () => {
+const indexHeader = () => {
   return (
     <div className={style.wrapper}>
       <Link href="/">
@@ -39,17 +39,8 @@ const Header = () => {
         />
       </div>
       <div className={style.headerItems}>
-        <Link href="/collections/0x0FA4b4b666812B08Fdd35402854CA12bc66B174A">
-          <div className={style.headerItem}> Collection </div>
-        </Link>
-        <Link href="/stats/[stats].js">
-          <div className={style.headerItem}> Stats </div>
-        </Link>
         <Link href="/resources/[resources].js">
           <div className={style.headerItem}> Resources </div>
-        </Link>
-        <Link href="/uniswap/[uniswap].js">
-          <div className={style.headerItem}> Uniswap </div>
         </Link>
         <div className={style.headerItem}> Create </div>
         <div className={style.headerIcon}>
@@ -63,4 +54,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default indexHeader

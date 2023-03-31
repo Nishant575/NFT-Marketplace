@@ -1,15 +1,24 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import indexHeader from '../components/indexHeader'
 import Hero from '../components/Hero'
 import { useWeb3 } from '@3rdweb/hooks'
 import { useEffect } from 'react'
 import { client } from '../lib/sanityClient'
 import toast, { Toaster } from 'react-hot-toast'
 
+
 const style = {
   wrapper: ``,
-  walletConnectWrapper: `flex flex-col justify-center items-center h-screen w-screen bg-[#3b3d42] `,
-  button: `border border-[#282b2f] bg-[#2081e2] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black`,
+  walletConnectWrapper: `flex flex-col justify-center items-center h-screen w-screen bg-[#3b3423] `,
+
+  buttonMetamask: `border border-[#282b2f] bg-[#ee811a] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black my-4 w-1/2 hover:w-1/2 hover:bg-sky-700`,
+  buttonCoinbase: `border border-[#282b2f] bg-[#ee811a] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black my-4 w-1/2 hover:w-1/2 hover:bg-sky-700`,
+  buttonWalletconnect: `border border-[#282b2f] bg-[#ee811a] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black my-4 w-1/2 hover:w-1/2 hover:bg-sky-700`,
+  buttonLedger: `border border-[#282b2f] bg-[#ee811a] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black my-4 w-1/2 hover:w-1/2 hover:bg-sky-700`,
+  buttonPhantom: `border border-[#282b2f] bg-[#ee811a] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black my-4 w-1/2 hover:w-1/2 hover:bg-sky-700`,
+  buttonBitkeep: `border border-[#282b2f] bg-[#ee811a] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black my-4 w-1/2 hover:w-1/2 hover:bg-sky-700`,
+
   details: `text-lg text-center text=[#282b2f] font-semibold mt-4`,
 }
 
@@ -21,7 +30,7 @@ export default function Home() {
       `Welcome back${userName !== 'Unnamed' ? ` ${userName}` : ''}!`,
       {
         style: {
-          background: '#04111d',
+          background: 'red',
           color: '#fff',
         },
       }
@@ -53,17 +62,50 @@ export default function Home() {
           <Hero />
         </>
       ) : (
+        <div>
+        <Header/>
         <div className={style.walletConnectWrapper}>
           <button
-            className={style.button}
+            className={style.buttonMetamask}
             onClick={() => connectWallet('injected')}
           >
-            Connect Wallet
+            <span>Connect Metamask</span>
+          </button>
+          <button
+            className={style.buttonCoinbase}
+            onClick={() => connectWallet('injected')}
+          >
+            Connect Coinbase Wallet
+          </button>
+          <button
+            className={style.buttonWalletconnect}
+            onClick={() => connectWallet('injected')}
+          >
+            Connect WalletConnect
+          </button>
+          <button
+            className={style.buttonLedger}
+            onClick={() => connectWallet('injected')}
+          >
+            Connect Ledger
+          </button>
+          <button
+            className={style.buttonPhantom}
+            onClick={() => connectWallet('injected')}
+          >
+            Connect Phantom
+          </button>
+          <button
+            className={style.buttonBitkeep}
+            onClick={() => connectWallet('injected')}
+          >
+            Connect BitKeep
           </button>
           <div className={style.details}>
             You need Chrome to be
             <br /> able to run this app.
           </div>
+        </div>
         </div>
       )}
     </div>
