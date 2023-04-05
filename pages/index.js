@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import indexHeader from '../components/indexHeader'
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 import { useWeb3 } from '@3rdweb/hooks'
 import { useEffect } from 'react'
 import { client } from '../lib/sanityClient'
@@ -60,6 +61,7 @@ export default function Home() {
         <>
           <Header />
           <Hero />
+          <Footer/>
         </>
       ) : (
         <div>
@@ -102,8 +104,9 @@ export default function Home() {
             Connect BitKeep
           </button>
           <div className={style.details}>
-            You need Chrome to be
-            <br /> able to run this app.
+            <span style={{color : 'white'}}>
+            You are one step away from NFT Marketplace.</span>
+            <br /> <span style={{color:'white'}}>Connect Wallet to proceed.</span>
           </div>
         </div>
         </div>

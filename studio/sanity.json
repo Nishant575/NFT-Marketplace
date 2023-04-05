@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "opensea-blockchain-youtube"
-  },
   "api": {
     "projectId": "l2zr9kgj",
     "dataset": "production"
+  },
+  "project": {
+    "name": "open-sea-blockchain"
   },
   "plugins": [
     "@sanity/base",

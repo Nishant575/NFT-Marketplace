@@ -16,6 +16,7 @@ import StatsHeader from '../../components/StatsHeader'
 import StatsEventItem from '../../components/nft/itemActivity/StatsEventItem'
 import { dummyEvents } from '../../static/dummyEvents'
 import StatsItemActivity from '../../components/nft/StatsItemActivity'
+import Footer from '../../components/Footer'
 
 
 const Stats = () => {
@@ -24,6 +25,7 @@ const Stats = () => {
     <Header/>
     <StatsHeader/>
     <StatsItemActivity />
+    <Footer/>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import GeneralDetails from '../../components/nft/GeneralDetails'
 import ItemActivity from '../../components/nft/ItemActivity'
 import Purchase from '../../components/nft/Purchase'
 import Chat from '../../components/Chat'
+import Footer from '../../components/Footer'
 
 const style = {
   wrapper: `flex flex-col items-center container-lg text-[#e5e8eb]`,
@@ -84,7 +85,7 @@ const Nft = () => {
               />
             </div>
           </div>
-          <ItemActivity />   
+          <ItemActivity />  
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import mintzoLogo from '../assets/mintzo2.png'
+import footerLogo from '../assets/footer-logo.png'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
@@ -25,8 +25,8 @@ const Header = () => {
     <div className={style.wrapper}>
       <Link href="/">
         <div className={style.logoContainer}>
-          <Image src={mintzoLogo} height={60} width={70} />
-          <div className={style.logoText}>Mintzo</div>
+          <Image src={footerLogo} height={40} width={40} style={{margin:'4px'}} />
+          <div className={style.logoText}> Mintzo</div>
         </div>
       </Link>
       <div className={style.searchBar}>

@@ -13,6 +13,7 @@ import NFTCard from '../../components/NFTCard'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
+import Footer from '../../components/Footer'
 
 
 
@@ -47,6 +48,7 @@ const Uniswap = () => {
     <div className="overflow-hidden">
       <Header />
       <UniswapHero/>    
+      <Footer/>
     </div>
 
   )
