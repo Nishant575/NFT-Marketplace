@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import footerLogo from '../assets/footer-logo.png'
+import mintzoLogo from '../assets/mintzo2.png'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
@@ -20,13 +20,13 @@ const style = {
   headerIcon: `text-[#8a939b] text-3xl font-black px-4 hover:text-white cursor-pointer`,
 }
 
-const Header = () => {
+const indexHeader = () => {
   return (
     <div className={style.wrapper}>
       <Link href="/">
         <div className={style.logoContainer}>
-          <Image src={footerLogo} height={40} width={40} style={{margin:'4px'}} />
-          <div className={style.logoText}> Mintzo</div>
+          <Image src={mintzoLogo} height={60} width={70} />
+          <div className={style.logoText}>Mintzo</div>
         </div>
       </Link>
       <div className={style.searchBar}>
@@ -39,17 +39,8 @@ const Header = () => {
         />
       </div>
       <div className={style.headerItems}>
-        <Link href="/collections/0x0FA4b4b666812B08Fdd35402854CA12bc66B174A">
-          <div className={style.headerItem}> Collection </div>
-        </Link>
-        <Link href="/stats/[stats].js">
-          <div className={style.headerItem}> Stats </div>
-        </Link>
         <Link href="/resources/[resources].js">
           <div className={style.headerItem}> Resources </div>
-        </Link>
-        <Link href="/uniswap/[uniswap].js">
-          <div className={style.headerItem}> Uniswap </div>
         </Link>
         <div className={style.headerItem}> Create </div>
         <div className={style.headerIcon}>
@@ -63,4 +54,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default indexHeader

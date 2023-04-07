@@ -12,13 +12,20 @@ import NFTCard from '../../components/NFTCard'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
+import StatsHeader from '../../components/StatsHeader'
+import StatsEventItem from '../../components/nft/itemActivity/StatsEventItem'
+import { dummyEvents } from '../../static/dummyEvents'
+import StatsItemActivity from '../../components/nft/StatsItemActivity'
+import Footer from '../../components/Footer'
+
 
 const Stats = () => {
   return (
-    <div className="overflow-hidden">
-      <div style={{color:'red'}}>
-        Stats Page
-      </div>
+    <div>
+    <Header/>
+    <StatsHeader/>
+    <StatsItemActivity />
+    <Footer/>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { useWeb3 } from '@3rdweb/hooks'
 import { client } from '../../lib/sanityClient'
 import { ThirdwebSDK } from '@3rdweb/sdk'
 import Header from '../../components/Header'
+import LearnCard from '../../components/LearnCard'
 import UniswapHero from '../../components/UniswapHero'
 import { CgWebsite } from 'react-icons/cg'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
@@ -43,15 +44,16 @@ const style = {
 
 
 
-const Uniswap = () => {
+const Resources = () => {
   return (
     <div className="overflow-hidden">
       <Header />
-      <UniswapHero/>    
+      <UniswapHero/>  
       <Footer/>
     </div>
 
   )
 }
 
-export default Uniswap
+export default Resources
+

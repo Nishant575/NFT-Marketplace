@@ -9,6 +9,7 @@ import { CgWebsite } from 'react-icons/cg'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 import NFTCard from '../../components/NFTCard'
+import Footer from '../../components/Footer'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
@@ -223,6 +224,7 @@ const Collection = () => {
           />
         ))}
       </div>
+      <Footer/>
     </div>
   )
 }

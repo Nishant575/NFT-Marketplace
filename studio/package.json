@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Nishant Dalvi <n.dalvi2010@gmail.com>",
+  "author": "Ayush Poojari <ayushp.b11@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
