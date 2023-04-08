@@ -45,8 +45,8 @@ const Header = () => {
         <Link href="/stats/[stats].js">
           <div className={style.headerItem}> Stats </div>
         </Link>
-        <Link href="/resources/[resources].js">
-          <div className={style.headerItem}> Resources </div>
+        <Link href="/about/[about].js">
+          <div className={style.headerItem}> About </div>
         </Link>
         <Link href="/uniswap/[uniswap].js">
           <div className={style.headerItem}> Uniswap </div>
