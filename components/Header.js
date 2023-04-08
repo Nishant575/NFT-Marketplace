@@ -52,9 +52,11 @@ const Header = () => {
           <div className={style.headerItem}> Uniswap </div>
         </Link>
         <div className={style.headerItem}> Create </div>
+        <Link href="/profile/[profile].js">
         <div className={style.headerIcon}>
           <CgProfile />
         </div>
+        </Link>
         <div className={style.headerIcon}>
           <MdOutlineAccountBalanceWallet />
         </div>

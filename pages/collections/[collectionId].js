@@ -16,7 +16,7 @@ import banner_img from '../../assets/banner.jpg'
 
 
 const style = {
-  bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
+  bannerImageContainer: `h-[40vh] w-screen overflow-hidden flex justify-center items-center`,
   bannerImage: `w-full object-cover`,
   infoContainer: `w-screen px-4`,
   midRow: `w-full flex justify-center text-white`,
@@ -118,11 +118,13 @@ const Collection = () => {
     <div className="overflow-hidden">
       <Header />
       <div className={style.bannerImageContainer}>
-        <Image
-      src={banner_img}
-      alt="Picture of the author"
-      width="800px"
-      height="200px"
+        <img className={style.bannerImageContainer}
+          src={
+            collection?.bannerImageUrl
+              ? collection.bannerImageUrl
+              : 'https://via.placeholder.com/200'
+          }
+          alt="Picture of the author"
         />
       </div>
       <div className={style.infoContainer}>
