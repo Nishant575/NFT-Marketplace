@@ -34,11 +34,13 @@ const style = {
   ethLogo: `h-6 mr-2`,
   statName: `text-lg w-full text-center mt-1`,
   description: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4`,
+  addressCopy: `hover:text-[#CCCCCC] cursor-pointer`
 }
 
 const Profile = () => {
     const { address } = useWeb3()
     const [user, setUser] = useState({})
+   
 
     const fetchCollectionData = async (sanityClient = client) => {
         const query = `*[_type == "users" && walletAddress == "${address}" ] {
@@ -61,6 +63,14 @@ const Profile = () => {
         fetchCollectionData()
       }, [address])
 
+      console.log(typeof address,"dfadfa")
+      let tempadd = address
+
+      let shortAddress = tempadd.substring(4, 0) + "..."+  tempadd.substring(42, 38) 
+
+      function copyAdress(){
+        navigator.clipboard.writeText(address)
+      }
     return (
         <div className="overflow-hidden">
             <Header />
@@ -114,7 +124,7 @@ const Profile = () => {
                 <div className={style.title}>{user?.userName}</div>
                 </div>
                 <div className={style.startRow}>
-                <div className={style.createdBy}>
+                <div className={style.createdBy} >
                 <Image
                         src={eth_logo}
                         alt="eth"
@@ -122,7 +132,7 @@ const Profile = () => {
                         width="15px"
                         height="15px"
                     />
-                   {address}
+                   <span title='copy' className={style.addressCopy} onClick={copyAdress}>{shortAddress}</span>
                 </div>
                 </div>
             </div>
