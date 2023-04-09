@@ -20,11 +20,11 @@ const style = {
   headerItems: ` flex items-center justify-end`,
   headerItem: `text-white px-4 font-bold text-[#c8cacd] hover:text-white cursor-pointer`,
   headerIcon: `text-[#8a939b] text-3xl font-black px-4 hover:text-white cursor-pointer`,
-  openseaFooterBg:`bg-[#1868b7] w-screen h-96 flex `,
-  openseaFooterDiv: `text-white font-bold text-white hover:text-black cursor-pointer m-12`,
+  openseaFooterBg:`bg-[#2E4053] w-screen h-96 flex `,
+  openseaFooterDiv: `text-white font-bold text-white hover:text-[#D7DBDD] cursor-pointer m-12`,
   textfooter: `text-white font-medium`,
 }
-
+//1868b7
 const Footer = () => {
   return (
     <div className={style.openseaFooterBg}>

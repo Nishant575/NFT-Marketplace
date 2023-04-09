@@ -14,7 +14,7 @@ import eth_logo from '../../assets/eth2.svg'
 
 
 const style = {
-  bannerImageContainer: `h-[31vh] w-screen overflow-hidden flex justify-center items-center`,
+  bannerImageContainer: `h-[32vh] w-screen overflow-hidden flex justify-center items-center`,
   bannerImage: `w-full object-cover`,
   infoContainer: `w-screen px-10`,
   startRow: `w-full flex justify-start text-white`,
