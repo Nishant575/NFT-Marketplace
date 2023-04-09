@@ -5,6 +5,8 @@ import { useWeb3 } from '@3rdweb/hooks'
 import { client } from '../../lib/sanityClient'
 import { ThirdwebSDK } from '@3rdweb/sdk'
 import Header from '../../components/Header'
+import Nav from '../../components/profile/Nav'
+import Info from '../../components/profile/Info'
 import { CgWebsite } from 'react-icons/cg'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
@@ -87,7 +89,7 @@ const Profile = () => {
             </div>
             <div className={style.infoContainer}>
                 <div className={style.startRow}>
-                <img
+                  <img
                     className={style.profileImg}
                     src={
                         user?.profileImageUrl
@@ -95,13 +97,12 @@ const Profile = () => {
                           : 'https://via.placeholder.com/200'
                       }
                     alt="profile image"
-                    
-                />
+                  />
                 </div>
                 <div className={style.endRow}>
-                <div className={style.socialIconsContainer}>
+                  <div className={style.socialIconsContainer}>
                     <div className={style.socialIconsWrapper}>
-                    <div className={style.socialIconsContent}>
+                      <div className={style.socialIconsContent}>
                         <div className={style.socialIcon}>
                         <CgWebsite />
                         </div>
@@ -117,25 +118,27 @@ const Profile = () => {
                         <div className={style.socialIcon}>
                         <HiDotsVertical />
                         </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div className={style.startRow}>
-                <div className={style.userName}>{user?.userName}</div>
+                      </div>
+                      </div>
+                  </div>
                 </div>
                 <div className={style.startRow}>
-                <div className={style.createdBy} >
-                <Image
-                        src={eth_logo}
-                        alt="eth"
-                        className={style.ethLogo}
-                        width="15px"
-                        height="15px"
-                    />
-                   <span title='copy' className={style.addressCopy} onClick={copyAdress}>{shortAddress}</span>
+                  <div className={style.userName}>{user?.userName}</div>
                 </div>
+                <div className={style.startRow}>
+                  <div className={style.createdBy} >
+                    <Image
+                            src={eth_logo}
+                            alt="eth"
+                            className={style.ethLogo}
+                            width="15px"
+                            height="15px"
+                        />
+                    <span title='copy' className={style.addressCopy} onClick={copyAdress}>{shortAddress}</span>
+                  </div>
                 </div>
+                  <Nav/>
+                 <Info/>    
             </div>
             <Footer/>
         </div>
