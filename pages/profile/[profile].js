@@ -16,17 +16,17 @@ import eth_logo from '../../assets/eth2.svg'
 const style = {
   bannerImageContainer: `h-[31vh] w-screen overflow-hidden flex justify-center items-center`,
   bannerImage: `w-full object-cover`,
-  infoContainer: `w-screen px-4`,
+  infoContainer: `w-screen px-10`,
   startRow: `w-full flex justify-start text-white`,
   midRow: `w-full flex justify-center text-white`,
   endRow: `w-full flex justify-end text-white`,
-  profileImg: `w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]`,
+  profileImg: `w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-7rem]`,
   socialIconsContainer: `flex text-3xl mb-[-2rem]`,
   socialIconsWrapper: `w-44`,
   socialIconsContent: `flex container justify-between text-[1.4rem] border-2 rounded-lg px-2`,
   socialIcon: `my-2`,
   divider: `border-r-2`,
-  title: `text-5xl font-bold mb-4`,
+  userName: `text-3xl font-bold mb-4`,
   createdBy: `text-lg mb-4`,
   statsContainer: `w-[44vw] flex justify-between py-4 border border-[#151b22] rounded-xl mb-4`,
   collectionStat: `w-1/4`,
@@ -64,6 +64,7 @@ const Profile = () => {
       }, [address])
 
       console.log(typeof address,"dfadfa")
+      console.log(address)
       let tempadd = address
 
       let shortAddress = tempadd.substring(4, 0) + "..."+  tempadd.substring(42, 38) 
@@ -121,7 +122,7 @@ const Profile = () => {
                 </div>
                 </div>
                 <div className={style.startRow}>
-                <div className={style.title}>{user?.userName}</div>
+                <div className={style.userName}>{user?.userName}</div>
                 </div>
                 <div className={style.startRow}>
                 <div className={style.createdBy} >

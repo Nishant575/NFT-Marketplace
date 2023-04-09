@@ -29,8 +29,8 @@ const StatsEventItem = ({ event }) => {
         <div className={style.eventPriceValue}>{event.price}</div>
       </div>
       <div className={`${style.accent} flex-[3]`}>{event.from}</div>
-      <div className={`${style.accent} flex-[3]`}>{event.to}</div>
-      <div className={`${style.accent} flex-[2]`}>{event.date}</div>
+      <div className={`${style.accent} flex-[3]`}>{event.volume}</div>
+      <div className={`${style.accent} flex-[2]`}>{event.change}</div>
     </div>
   )
 }
