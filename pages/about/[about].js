@@ -15,6 +15,7 @@ import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
 import about_banner from '../../assets/about_banner.svg'
+import our_story from '../../assets/story.webp'
 import Footer from '../../components/Footer'
 import ReactPlayer from 'react-player'
 
@@ -44,6 +45,7 @@ const style = {
   carouselDiv: `flex items-center`,
   aboutContainer:`flex items-center bg-white w-screen h-150 sm flex-inverse`,
   aboutDiv: `w-screen h-100 text-black font-bold m-12`,
+  aboutContainer2: `flex items-center bg-[#f3fbfe] w-screen h-150 sm flex-inverse`
 }
 
 
@@ -82,6 +84,37 @@ const About = () => {
             <div id = "rightbox" className={style.aboutDiv}>
                 <Image src= {about_banner} height={550} width={550} style={{paddingBottom:'4px'}}/>
             </div>
+        </div>
+        <div id = "container-2"className= {style.aboutContainer2}>
+            <div id = "leftbox" className={style.aboutDiv}>
+                <ReactPlayer url='https://www.youtube.com/watch?v=H3TABd_nBJU' />
+            </div>
+            <div id = "rightbox" className={style.aboutDiv}>
+                <h2 style={{fontSize:'30px' ,paddingBottom:'10px',color:'black'}}>Who is Mintzo and What is NFT Marketplace</h2>
+                <span>Welcome to Mintzo, the ultimate marketplace for NFT enthusiasts and creators alike. Whether you're looking to buy or sell NFTs, Mintzo is the perfect platform for you. Our user-friendly 
+                  interface and cutting-edge technology ensure a seamless experience for all.<br></br><br></br>
+                  For buyers, Mintzo offers a wide variety of NFTs to choose from, including unique digital artwork, collectibles, music, videos, and more.
+                  For sellers, Mintzo offers a hassle-free way to showcase and sell your NFTs. Our platform allows you to easily create, mint, and list your NFTs for sale. With our secure and reliable blockchain technology, you can rest assured that your creations are safe and protected. Plus, our low transaction fees 
+                  and high visibility ensure that you get the most out of your sales.<br></br><br></br>
+                  Mintzo is the perfect platform for NFT enthusiasts and creators alike. With our user-friendly interface, cutting-edge technology, and commitment to sustainability, we offer a truly unique and enjoyable experience for all. 
+                  Join us today and start exploring the world of NFTs like never before.
+                </span>
+            </div>
+        </div>
+        <div className={style.aboutContainer2}>
+          <div id = "leftbox" className={style.aboutDiv}>
+              <h2 style={{fontSize:'30px' ,paddingBottom:'10px',color:'black',textAlign:'center'}}>Our Story</h2>
+              <span>
+                Mintzo NFT Marketplace is the brainchild of Nishant Dalvi , Ayush Poojari , Aakash Singh and Shreyas Pathak, four passionate and technology driven entrepreneurs with a vision for revolutionizing the NFT industry.
+
+                Their journey began with a shared passion for blockchain technology and its potential to transform the world of art and collectibles. With a deep understanding of the power of NFTs, set out to create a platform that would empower creators and collectors alike, providing a seamless experience for all.<br></br><br></br>
+
+                Their vision quickly took shape, and they began to build Mintzo from the ground up. Through countless hours of hard work, research, and development, they created a cutting-edge platform that leverages the latest blockchain technology to provide a secure and reliable marketplace for NFTs.
+              </span>
+          </div>
+          <div id = "rightbox" className={style.aboutDiv}>
+              <Image src= {our_story} height={550} width={500} style={{paddingBottom:'4px'}}/>
+          </div>
         </div>
       <Footer/>
     </div>
