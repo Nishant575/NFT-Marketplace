@@ -13,6 +13,7 @@ import { HiDotsVertical } from 'react-icons/hi'
 import Footer from '../../components/Footer'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
+import edit_logo from '../../assets/edit.png'
 
 
 const style = {
@@ -36,7 +37,8 @@ const style = {
   ethLogo: `h-6 mr-2`,
   statName: `text-lg w-full text-center mt-1`,
   description: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4`,
-  addressCopy: `hover:text-[#CCCCCC] cursor-pointer`
+  addressCopy: `hover:text-[#CCCCCC] cursor-pointer`,
+  edit: 'px-4 mx-2 hover:cursor-pointer'
 }
 
 const Profile = () => {
@@ -124,6 +126,15 @@ const Profile = () => {
                 </div>
                 <div className={style.startRow}>
                   <div className={style.userName}>{user?.userName}</div>
+                  <Link href="">
+                    <div className={style.edit}>
+                      <Image
+                        src={edit_logo}
+                        alt="edit"
+                        
+                      />
+                    </div>
+                  </Link>
                 </div>
                 <div className={style.startRow}>
                   <div className={style.createdBy} >

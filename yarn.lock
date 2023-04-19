@@ -2823,7 +2823,7 @@ nanoid@^3.3.4:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-next@^12.3.1:
+next@^12.3.4:
   version "12.3.4"
   resolved "https://registry.npmjs.org/next/-/next-12.3.4.tgz"
   integrity sha512-VcyMJUtLZBGzLKo3oMxrEF0stxh8HwuW976pAzlHhI3t8qJ4SROjCrSh1T24bhrbjw55wfZXAbXPGwPt5FLRfQ==
