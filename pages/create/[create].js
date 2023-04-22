@@ -14,6 +14,7 @@ import NFTCard from '../../components/NFTCard'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
+import mint_banner from '../../assets/mint_banner.webp'
 import about_banner from '../../assets/about_banner.svg'
 import our_story from '../../assets/story.webp'
 import Footer from '../../components/Footer'
@@ -56,9 +57,39 @@ const Create = () => {
   return (
     <div>
       <Header />
+      
       <div className={style.aboutContainer}>
-        
-       </div>
+             
+            <div id = "leftbox" className={style.aboutDiv}>
+                <h2 style={{fontSize:'30px' ,paddingBottom:'10px',color:'black'}}><span>Mint NFT<br></br></span></h2>        
+            
+            <Image src= {mint_banner} height={450} width={1500} style={{paddingBottom:'4px' , borderRadius:'10px'}}/>
+            
+            <h3 style={{fontSize:'20px' ,paddingBottom:'10px',color:'black'}}>Name<span style
+            ={{color: 'red'}}>*</span></h3>
+            <div>
+                <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Small input</label>
+                <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </input>
+            </div>
+            <br></br>
+            <br></br>
+            <h3 style={{fontSize:'20px' ,paddingBottom:'10px',color:'black'}}>Media<span style
+            ={{color: 'red'}}>*</span></h3>
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+            </input>
+            <br></br>
+            <br></br>
+            <h3 style={{fontSize:'20px' ,paddingBottom:'10px',color:'black'}}>Description<span style
+            ={{color: 'red'}}>*</span></h3>
+            <div class="mb-6">
+                <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Large input</label>
+                <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </input>
+            </div>
+            </div>    
+      </div>
       <Footer/>
     </div>
   )
