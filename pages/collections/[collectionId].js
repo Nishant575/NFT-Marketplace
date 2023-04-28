@@ -13,6 +13,9 @@ import Footer from '../../components/Footer'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import banner_img from '../../assets/banner.jpg'
+//import { ThirdwebSDK } from "@thirdweb-dev/sdk/evm";
+//import { useNFTs, useContract } from "@thirdweb-dev/react";
+
 
 
 const style = {
@@ -45,15 +48,13 @@ const Collection = () => {
   const [nfts, setNfts] = useState([])
   const [listings, setListings] = useState([])
 
-  //
+  //https://eth-goerli.g.alchemy.com/v2/m2YkWyTPFPQTuBEdnFwlONnz1fi941AW
 
   const nftModule = useMemo(() => {
     if (!provider) return
 
     const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      'https://eth-goerli.g.alchemy.com/v2/m2YkWyTPFPQTuBEdnFwlONnz1fi941AW'
-    )
+      provider.getSigner())
     return sdk.getNFTModule(collectionId)
   }, [provider])
 
@@ -71,11 +72,9 @@ const Collection = () => {
     if (!provider) return
 
     const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      'https://eth-goerli.g.alchemy.com/v2/m2YkWyTPFPQTuBEdnFwlONnz1fi941AW'
-    )
+      provider.getSigner())
     return sdk.getMarketplaceModule(
-      '0xC00006c5779F07f6960De389E265a2ca68Ea572A'
+      '0x04a92D52EA19F7702FFB89C04900f147B237D798'
     )
   }, [provider])
 
@@ -102,7 +101,7 @@ const Collection = () => {
 
     const collectionData = await sanityClient.fetch(query)
 
-    console.log(collectionData, '🔥')
+    console.log(collectionData[0], '🔥')
 
     // the query returns 1 object inside of an array
     await setCollection(collectionData[0])
@@ -112,8 +111,8 @@ const Collection = () => {
     fetchCollectionData()
   }, [collectionId])
 
-  console.log(router.query)
-  console.log(router.query.collectionId)
+  //console.log(router.query)
+  //console.log(router.query.collectionId)
   return (
     <div className="overflow-hidden">
       <Header />
@@ -223,6 +222,7 @@ const Collection = () => {
             nftItem={nftItem}
             title={collection?.title}
             listings={listings}
+            collectionId={collectionId}
           />
         ))}
       </div>

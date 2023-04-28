@@ -28,10 +28,9 @@ const Nft = () => {
     if (!provider) return
 
     const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      'https://eth-goerli.g.alchemy.com/v2/m2YkWyTPFPQTuBEdnFwlONnz1fi941AW'
+      provider.getSigner()
     )
-    return sdk.getNFTModule('0x0FA4b4b666812B08Fdd35402854CA12bc66B174A')
+    return sdk.getNFTModule('0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07')
   }, [provider])
 
   // get all NFTs in the collection
@@ -50,12 +49,11 @@ const Nft = () => {
     if (!provider) return
 
     const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      'https://eth-goerli.g.alchemy.com/v2/m2YkWyTPFPQTuBEdnFwlONnz1fi941AW'
+      provider.getSigner()
     )
 
     return sdk.getMarketplaceModule(
-      '0xC00006c5779F07f6960De389E265a2ca68Ea572A'
+      '0x04a92D52EA19F7702FFB89C04900f147B237D798'
     )
   }, [provider])
 

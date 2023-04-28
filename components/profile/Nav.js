@@ -25,7 +25,7 @@ const Nav = () => {
         <div className={style.wrapper}>
             <div className={style.headerItems}>
                 <Link href="#">
-                    <div className={style.headerItem}> Collected </div>
+                    <div className={`${style.headerItem} border-b`}> Collected </div>
                 </Link>
                 <Link href="#">
                     <div className={style.headerItem}> Created </div>

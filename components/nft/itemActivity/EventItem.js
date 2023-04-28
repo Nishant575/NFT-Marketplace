@@ -1,4 +1,6 @@
 import { BsFillCartFill } from 'react-icons/bs'
+import eth_logo from '../../../assets/eth.png'
+import Image from 'next/image'
 
 const style = {
   eventItem: `flex px-4 py-5 font-medium`,
@@ -8,7 +10,7 @@ const style = {
   eventPrice: `flex items-center`,
   eventPriceValue: `text-lg`,
   ethLogo: `h-5 mr-2`,
-  accent: `text-[#2081e2]`,
+  accent: `text-[white]`,
 }
 
 const EventItem = ({ event }) => {
@@ -18,12 +20,14 @@ const EventItem = ({ event }) => {
         <div className={style.eventIcon}>
           <BsFillCartFill />
         </div>
-        <div className={style.eventName}>Sale</div>
+        <div className={style.eventName}>Mint</div>
       </div>
       <div className={`${style.eventPrice} flex-[2]`}>
-        <img
-          src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+        <Image
+          src={eth_logo}
           alt="eth"
+          width="30px"
+          height="30px"
           className={style.ethLogo}
         />
         <div className={style.eventPriceValue}>{event.price}</div>

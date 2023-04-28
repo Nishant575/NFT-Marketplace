@@ -3,6 +3,7 @@ import { BiHeart } from 'react-icons/bi'
 import Router from 'next/router'
 import Image from 'next/image'
 import eth_logo from '../assets/eth2.svg'
+import { ThirdwebSDK } from "@thirdweb-dev/sdk/evm"
 
 
 
@@ -25,13 +26,18 @@ const style = {
 
 const NFTCard = ({ nftItem, title, listings }) => {
   const [isListed, setIsListed] = useState(false)
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState(0.)
+  const sdk = new ThirdwebSDK("goerli");
+  const contract = sdk.getContract("0x04a92D52EA19F7702FFB89C04900f147B237D798");
+  //console.log("price:  ",contract.directListings.currencyPriceForListing(nftItem.id, '0x1234'))
 
   useEffect(() => {
     const listing = listings.find((listing) => listing.asset.id === nftItem.id)
+    console.log("liosted nfts",listings)
     if (Boolean(listing)) {
       setIsListed(true)
-      setPrice(listing.buyoutCurrencyValuePerToken.displayValue)
+      setPrice(listing.buyoutPrice.displayValue)
+      //console.log("price:  ",contract.directListings.currencyPriceForListing(nftItem.id, '0x1234'))
     }
   }, [listings, nftItem])
 

@@ -14,6 +14,7 @@ import Footer from '../../components/Footer'
 import Image from 'next/image'
 import eth_logo from '../../assets/eth2.svg'
 import edit_logo from '../../assets/edit.png'
+import Router from 'next/router'
 
 
 const style = {
@@ -42,117 +43,123 @@ const style = {
 }
 
 const Profile = () => {
-    const { address } = useWeb3()
-    const [user, setUser] = useState({})
-   
+  const { address } = useWeb3()
+  const [user, setUser] = useState({})
+  //const [shortAddress, setShort] = useState("")
+  
 
-    const fetchCollectionData = async (sanityClient = client) => {
-        const query = `*[_type == "users" && walletAddress == "${address}" ] {
-            userName,
-            "profileImageUrl": profileImage.asset->url,
-            "bannerImageUrl": bannerImage.asset->url,
-            twitterHandle,
-            igHandle
-          }`
-    
-        const userData = await sanityClient.fetch(query)
-    
-        console.log(userData, '🔥')
-    
-        // the query returns 1 object inside of an array
-        await setUser(userData[0])
-      }
+  const fetchCollectionData = async (sanityClient = client) => {
+    const query = `*[_type == "users" && walletAddress == "${address}" ] {
+      userName,
+      "profileImageUrl": profileImage.asset->url,
+      "bannerImageUrl": bannerImage.asset->url,
+      twitterHandle,
+      igHandle,
+      walletAddress
+    }`
 
-      useEffect(() => {
-        fetchCollectionData()
-      }, [address])
+    const userData = await sanityClient.fetch(query)
+    console.log(userData, '🔥')
 
-      console.log(typeof address,"dfadfa")
-      console.log(address)
-      let tempadd = address
+    // the query returns 1 object inside of an array
+    await setUser(userData[0])
 
-      let shortAddress = tempadd.substring(4, 0) + "..."+  tempadd.substring(42, 38) 
+  }
 
-      function copyAdress(){
-        navigator.clipboard.writeText(address)
-      }
-    return (
-        <div className="overflow-hidden">
-            <Header />
-            <div className={style.bannerImageContainer}>
-                <img className={style.bannerImageContainer}
-                src={
-                    user?.bannerImageUrl
-                      ? user.bannerImageUrl
-                      : 'https://via.placeholder.com/200'
-                  }
-                alt="Picture of the author"
-                />
-            </div>
-            <div className={style.infoContainer}>
-                <div className={style.startRow}>
-                  <img
-                    className={style.profileImg}
-                    src={
-                        user?.profileImageUrl
-                          ? user.profileImageUrl
-                          : 'https://via.placeholder.com/200'
-                      }
-                    alt="profile image"
-                  />
-                </div>
-                <div className={style.endRow}>
-                  <div className={style.socialIconsContainer}>
-                    <div className={style.socialIconsWrapper}>
-                      <div className={style.socialIconsContent}>
-                        <div className={style.socialIcon}>
-                        <CgWebsite />
-                        </div>
-                        <div className={style.divider} />
-                        <div className={style.socialIcon}>
-                        <AiOutlineInstagram />
-                        </div>
-                        <div className={style.divider} />
-                        <div className={style.socialIcon}>
-                        <AiOutlineTwitter />
-                        </div>
-                        <div className={style.divider} />
-                        <div className={style.socialIcon}>
-                        <HiDotsVertical />
-                        </div>
-                      </div>
-                      </div>
-                  </div>
-                </div>
-                <div className={style.startRow}>
-                  <div className={style.userName}>{user?.userName}</div>
-                  <Link href="">
-                    <div className={style.edit}>
-                      <Image
-                        src={edit_logo}
-                        alt="edit"
-                        
-                      />
-                    </div>
-                  </Link>
-                </div>
-                <div className={style.startRow}>
-                  <div className={style.createdBy} >
-                    <Image
-                            src={eth_logo}
-                            alt="eth"
-                            className={style.ethLogo}
-                            width="15px"
-                            height="15px"
-                        />
-                    <span title='copy' className={style.addressCopy} onClick={copyAdress}>{shortAddress}</span>
-                  </div>
-                </div>
-                  <Nav/>
-                 <Info/>    
-            </div>
-            <Footer/>
+  useEffect(() => {
+    fetchCollectionData()
+  }, [address])
+
+  console.log(typeof address,"dfadfa")
+  console.log(address)
+  let tempadd = address
+
+  let shortAddress = tempadd.substring(4, 0) + "..."+  tempadd.substring(42, 38) 
+
+  function copyAdress(){
+    navigator.clipboard.writeText(address)
+  }
+  return (
+    <div className="overflow-hidden">
+      <Header />
+      <div className={style.bannerImageContainer}>
+        <img className={style.bannerImageContainer}
+            src={
+                user?.bannerImageUrl
+                  ? user.bannerImageUrl
+                  : 'https://via.placeholder.com/200'
+              }
+            alt="Picture of the author"
+            />
+      </div>
+      <div className={style.infoContainer}>
+        <div className={style.startRow}>
+          <img
+            className={style.profileImg}
+            src={
+                user?.profileImageUrl
+                  ? user.profileImageUrl
+                  : 'https://via.placeholder.com/200'
+              }
+            alt="profile image"
+          />
         </div>
-    )
+        <div className={style.endRow}>
+          <div className={style.socialIconsContainer}>
+            <div className={style.socialIconsWrapper}>
+              <div className={style.socialIconsContent}>
+                <div className={style.socialIcon}>
+                <CgWebsite />
+                </div>
+                <div className={style.divider} />
+                <div className={style.socialIcon}>
+                <AiOutlineInstagram />
+                </div>
+                <div className={style.divider} />
+                <div className={style.socialIcon}>
+                <AiOutlineTwitter />
+                </div>
+                <div className={style.divider} />
+                <div className={style.socialIcon}>
+                <HiDotsVertical />
+                </div>
+              </div>
+              </div>
+          </div>
+        </div>
+        <div className={style.startRow}>
+          <div className={style.userName}>{user?.userName}</div>
+            <div className={style.edit}
+                  onClick={() => {
+                  Router.push({
+                    pathname: `/profile/edit/[edit].js`
+                  })
+                }}
+              >
+              <Image
+                src={edit_logo}
+                alt="edit"
+                
+              />
+            </div>
+        </div>
+        <div className={style.startRow}>
+          <div className={style.createdBy} >
+            <Image
+                    src={eth_logo}
+                    alt="eth"
+                    className={style.ethLogo}
+                    width="15px"
+                    height="15px"
+                />
+            <span title='copy' className={style.addressCopy} onClick={copyAdress}>{shortAddress}</span>
+          </div>
+        </div>
+        <Nav/>
+        <Info/>    
+      </div>
+      <Footer/>
+    </div>
+  )
 }
 export default Profile 

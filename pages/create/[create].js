@@ -88,6 +88,9 @@ const Create = () => {
                 <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </input>
             </div>
+            <div class="flex justify-center">
+              <button href="https://thirdweb.com/goerli/0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07/nfts" class="rounded-none bg-[#1D5B99] w-24 h-10 text-slate-200 self-center">MINT</button>
+            </div>
             </div>    
       </div>
       <Footer/>
