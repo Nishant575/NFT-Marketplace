@@ -68,8 +68,8 @@ const Create = () => {
             <h3 style={{fontSize:'20px' ,paddingBottom:'10px',color:'black'}}>Name<span style
             ={{color: 'red'}}>*</span></h3>
             <div>
-                <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Small input</label>
-                <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Small input</label>
+                <input type="text" class=" text-xl block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </input>
             </div>
             <br></br>
@@ -77,7 +77,7 @@ const Create = () => {
             <h3 style={{fontSize:'20px' ,paddingBottom:'10px',color:'black'}}>Media<span style
             ={{color: 'red'}}>*</span></h3>
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
-            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+            <input class="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
             </input>
             <br></br>
             <br></br>
@@ -85,11 +85,12 @@ const Create = () => {
             ={{color: 'red'}}>*</span></h3>
             <div class="mb-6">
                 <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Large input</label>
-                <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 text-xl focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </input>
             </div>
             <div class="flex justify-center">
-              <button href="https://thirdweb.com/goerli/0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07/nfts" class="rounded-none bg-[#1D5B99] w-24 h-10 text-slate-200 self-center">MINT</button>
+
+              <button class="rounded-none bg-[#1D5B99] w-24 h-10 text-slate-200 self-center"><a  href="https://thirdweb.com/goerli/0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07/nfts" target="_blank" >MINT</a></button>
             </div>
             </div>    
       </div>

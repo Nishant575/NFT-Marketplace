@@ -49,7 +49,8 @@ const Nft = () => {
     if (!provider) return
 
     const sdk = new ThirdwebSDK(
-      provider.getSigner()
+      provider.getSigner(),
+      'https://eth-goerli.g.alchemy.com/v2/m2YkWyTPFPQTuBEdnFwlONnz1fi941AW'
     )
 
     return sdk.getMarketplaceModule(

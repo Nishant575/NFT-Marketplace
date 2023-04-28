@@ -21,7 +21,7 @@ import banner_img from '../../assets/banner.jpg'
 const style = {
   bannerImageContainer: `h-[40vh] w-screen overflow-hidden flex justify-center items-center`,
   bannerImage: `w-full object-cover`,
-  infoContainer: `w-screen px-4`,
+  infoContainer: `w-screen px-4 mt-8`,
   midRow: `w-full flex justify-center text-white`,
   endRow: `w-full flex justify-end text-white`,
   profileImg: `w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]`,
@@ -40,7 +40,7 @@ const style = {
   description: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4`,
 }
 
-const Collection = () => {
+const Buy = () => {
   const router = useRouter()
   const { provider } = useWeb3()
   const { collectionId } = router.query
@@ -55,7 +55,7 @@ const Collection = () => {
 
     const sdk = new ThirdwebSDK(
       provider.getSigner())
-    return sdk.getNFTModule(collectionId)
+    return sdk.getNFTModule("0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07")
   }, [provider])
 
   // get all NFTs in the collection
@@ -116,108 +116,20 @@ const Collection = () => {
   return (
     <div className="overflow-hidden">
       <Header />
-      <div className={style.bannerImageContainer}>
-        <img className={style.bannerImageContainer}
-          src={
-            collection?.bannerImageUrl
-              ? collection.bannerImageUrl
-              : 'https://via.placeholder.com/200'
-          }
-          alt="Picture of the author"
-        />
-      </div>
+      
       <div className={style.infoContainer}>
+    
         <div className={style.midRow}>
-          <img
-            className={style.profileImg}
-            src={
-              collection?.imageUrl
-                ? collection.imageUrl
-                : 'https://via.placeholder.com/200'
-            }
-            alt="profile image"
-            
-          />
-        </div>
-        <div className={style.endRow}>
-          <div className={style.socialIconsContainer}>
-            <div className={style.socialIconsWrapper}>
-              <div className={style.socialIconsContent}>
-                <div className={style.socialIcon}>
-                  <CgWebsite />
-                </div>
-                <div className={style.divider} />
-                <div className={style.socialIcon}>
-                  <AiOutlineInstagram />
-                </div>
-                <div className={style.divider} />
-                <div className={style.socialIcon}>
-                  <AiOutlineTwitter />
-                </div>
-                <div className={style.divider} />
-                <div className={style.socialIcon}>
-                  <HiDotsVertical />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.midRow}>
-          <div className={style.title}>{collection?.title}</div>
-        </div>
-        <div className={style.midRow}>
-          <div className={style.createdBy}>
-            Created by{' '}
+          <div className={style.statValue}>
+            Buy NFT's
             <span className="text-[#2081e2]">{collection?.creator}</span>
           </div>
         </div>
-        <div className={style.midRow}>
-          <div className={style.statsContainer}>
-            <div className={style.collectionStat}>
-              <div className={style.statValue}>{nfts.length}</div>
-              <div className={style.statName}>items</div>
-            </div>
-            <div className={style.collectionStat}>
-              <div className={style.statValue}>
-                {collection?.allOwners ? collection.allOwners.length : ''}
-              </div>
-              <div className={style.statName}>owners</div>
-            </div>
-            <div className={style.collectionStat}>
-              <div className={style.statValue}>
-               <Image
-                  src={eth_logo}
-                  alt="eth"
-                  className={style.ethLogo}
-                  width="30px"
-                  height="30px"
-                />
-                {collection?.floorPrice}
-              </div>
-              <div className={style.statName}>floor price</div>
-            </div>
-            <div className={style.collectionStat}>
-              <div className={style.statValue}>
-                <Image
-                  src={eth_logo}
-                  alt="eth"
-                  className={style.ethLogo}
-                  width="30px"
-                  height="30px"
-                />
-                {collection?.volumeTraded}.5K
-              </div>
-              <div className={style.statName}>volume traded</div>
-            </div>
-          </div>
-        </div>
-        <div className={style.midRow}>
-          <div className={style.description}>{collection?.description}</div>
-        </div>
       </div>
-      <div className="flex flex-wrap ">
+      <div className="flex flex-wrap mt-9 ">
         {nfts.map((nftItem, id) => (
           <NFTCard
+            isL={true}
             key={id}
             nftItem={nftItem}
             title={collection?.title}
@@ -231,4 +143,4 @@ const Collection = () => {
   )
 }
 
-export default Collection
+export default Buy

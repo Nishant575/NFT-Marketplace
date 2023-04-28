@@ -28,19 +28,22 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
     setEnableButton(true)
   }, [selectedMarketNft, selectedNft])
 
-  const confirmPurchase = (toastHandler = toast) =>
+ function confirmPurchase(toastHandler = toast) {
+
+    console.log("buy success")
     toastHandler.success(`Purchase successful!`, {
       style: {
         background: '#04111d',
         color: '#fff',
       },
-    })
+    })}
 
   const buyItem = async (
     listingId = selectedMarketNft.id,
     quantityDesired = 1,
     module = marketPlaceModule
   ) => {
+    
     console.log(listingId, quantityDesired, module, 'david')
     
     await module
@@ -50,7 +53,7 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
       })
       .catch((error) => console.error(error))
 
-    confirmPurchase()
+    //confirmPurchase()
   }
 
   return (
@@ -59,9 +62,7 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
       {isListed === 'true' ? (
         <>
           <div
-            onClick={() => {
-              enableButton ? buyItem(selectedMarketNft.id, 1) : null
-            }}
+            onClick = {confirmPurchase}
             className={`${style.button} bg-[#2081e2] hover:bg-[#42a0ff]`}
           >
             <IoMdWallet className={style.buttonIcon} />
@@ -77,7 +78,7 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
       ) : (
         <div className={`${style.button} bg-[#2081e2] hover:bg-[#42a0ff]`}>
           <IoMdWallet className={style.buttonIcon} />
-          <div className={style.buttonText}>List Item</div>
+          <div className={style.buttonText}><a href="https://thirdweb.com/goerli/0x04a92D52EA19F7702FFB89C04900f147B237D798/direct-listings" target="_blank">List Item</a></div>
         </div>
       )}
     </div>

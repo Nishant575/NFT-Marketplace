@@ -24,8 +24,8 @@ const style = {
   likeIcon: `text-xl mr-2`,
 }
 
-const NFTCard = ({ nftItem, title, listings, isL }) => {
-  const [isListed, setIsListed] = useState(isL)
+const NFTCardBuy = ({ nftItem, title, listings }) => {
+  const [isListed, setIsListed] = useState(true)
   const [price, setPrice] = useState(0)
   const sdk = new ThirdwebSDK("goerli");
   const contract = sdk.getContract("0x04a92D52EA19F7702FFB89C04900f147B237D798");
@@ -71,7 +71,8 @@ const NFTCard = ({ nftItem, title, listings, isL }) => {
                   width="30px"
                   height="30px"
                 />
-                0.001
+                {
+                {price}}
               </div>
             </div>
           )}
@@ -87,4 +88,4 @@ const NFTCard = ({ nftItem, title, listings, isL }) => {
   )
 }
 
-export default NFTCard
+export default NFTCardBuy

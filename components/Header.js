@@ -42,9 +42,6 @@ const Header = () => {
         <Link href="/collections/0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07">
           <div className={style.headerItem}> Collection </div>
         </Link>
-        <Link href="/stats/[stats].js">
-          <div className={style.headerItem}> Stats </div>
-        </Link>
         <Link href="/about/[about].js">
           <div className={style.headerItem}> About </div>
         </Link>
@@ -52,16 +49,18 @@ const Header = () => {
           <div className={style.headerItem}> Uniswap </div>
         </Link>
         <Link href="/create/[create].js">
-        <div className={style.headerItem}> Create </div>
+        <div className={style.headerItem}> Mint </div>
         </Link>
         <Link href="/profile/[profile].js">
         <div className={style.headerIcon}>
           <CgProfile />
         </div>
         </Link>
-        <div className={style.headerIcon}>
-          <MdOutlineAccountBalanceWallet />
-        </div>
+        <Link href = "/buy/0xe4a4803e60d6FdF8749F2d27c4869b4b237f4c07">
+          <div className={style.headerIcon}>
+            <MdOutlineAccountBalanceWallet />
+          </div>
+        </Link>
       </div>
     </div>
   )
